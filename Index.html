@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Classroom Message Integrity Tool</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>CLASSROOM MESSAGE INTEGRITY TOOL</h1>
+    <p>CRC-Based Classroom Message Verification</p>
+</header>
+
+<main>
+
+    <!-- STATISTICS -->
+    <section class="stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">📤</div>
+            <div>
+                <p>Total Transmitted</p>
+                <h2 id="totalTransmitted">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">✓</div>
+            <div>
+                <p>Verified</p>
+                <h2 id="verified">0</h2>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">✕</div>
+            <div>
+                <p>Integrity Failed</p>
+                <h2 id="failed">0</h2>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- SENDER + RECEIVER -->
+    <section class="panels">
+
+        <!-- SENDER -->
+        <div class="panel">
+
+            <h2>👩‍🏫 SENDER</h2>
+
+            <p class="subtitle">Send a classroom message or file</p>
+
+            <label>Select Type</label>
+
+            <div class="type-buttons">
+
+                <button id="textButton"
+                        class="type-button active"
+                        onclick="selectText()">
+                    💬 Text
+                </button>
+
+                <button id="fileButton"
+                        class="type-button"
+                        onclick="selectFile()">
+                    📄 File
+                </button>
+
+            </div>
+
+
+            <!-- TEXT -->
+            <div id="textArea">
+
+                <label>Enter Message</label>
+
+                <textarea
+                    id="message"
+                    placeholder="Type your classroom message here...">
+                </textarea>
+
+            </div>
+
+
+            <!-- FILE -->
+            <div id="fileArea" class="hidden">
+
+                <label>Select File</label>
+
+                <input
+                    type="file"
+                    id="file">
+
+            </div>
+
+
+            <button class="transmit-button" onclick="transmit()">
+                📤 TRANSMIT
+            </button>
+
+            <div id="senderMessage"></div>
+
+        </div>
+
+
+        <!-- RECEIVER -->
+        <div class="panel">
+
+            <h2>👨‍🎓 RECEIVER</h2>
+
+            <p class="subtitle">Received Data</p>
+
+            <div id="receiver">
+
+                <div class="waiting">
+
+                    <div class="big-icon">📥</div>
+
+                    <h3>Waiting for Transmission</h3>
+
+                    <p>
+                        Transmitted data will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CRC COMPARISON -->
+    <section class="crc-panel">
+
+        <h2>🔐 CRC COMPARISON</h2>
+
+        <div class="crc-content">
+
+            <div class="crc-row">
+                <span>Sender CRC</span>
+                <strong id="senderCRC">—</strong>
+            </div>
+
+            <div class="crc-row">
+                <span>Receiver CRC</span>
+                <strong id="receiverCRC">—</strong>
+            </div>
+
+        </div>
+
+        <div id="crcStatus" class="crc-status">
+            Waiting for verification
+        </div>
+
+    </section>
+
+
+    <!-- TRANSMISSION HISTORY -->
+    <section class="history-panel">
+
+        <h2>TRANSMISSION HISTORY</h2>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>S.No</th>
+                        <th>Type</th>
+                        <th>Data</th>
+                        <th>Sender CRC</th>
+                        <th>Receiver CRC</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="history">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    🔐 Classroom Message Integrity Tool • CRC Error Detection
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,558 @@
+/* =========================================
+   CLASSROOM MESSAGE INTEGRITY TOOL
+   ACADEMIC MINIMALIST INDIGO + GRADIENT UI
+========================================= */
+
+
+/* ---------- BASIC ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7f6;
+    color: #1a252f;
+    min-height: 100vh;
+}
+
+
+/* ---------- HEADER ---------- */
+
+header {
+    background: linear-gradient(135deg, #1e1b4b, #312e81, #4f46e5);
+    padding: 30px 40px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(30, 27, 75, 0.18);
+}
+
+header h1 {
+    color: white;
+    font-size: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #e0e7ff;
+    font-size: 15px;
+}
+
+
+/* ---------- MAIN ---------- */
+
+main {
+    width: 92%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+
+/* ---------- STATISTICS ---------- */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 8px 32px rgba(30, 27, 75, 0.06);
+}
+
+
+/* Total Transmitted */
+
+.stat-card:nth-child(1) {
+    border-top: 4px solid #4f46e5;
+}
+
+.stat-card:nth-child(1) .stat-icon {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+
+/* Verified */
+
+.stat-card:nth-child(2) {
+    border-top: 4px solid #0d9488;
+}
+
+.stat-card:nth-child(2) .stat-icon {
+    background: #ccfbf1;
+    color: #0d9488;
+}
+
+
+/* Integrity Failed */
+
+.stat-card:nth-child(3) {
+    border-top: 4px solid #ea580c;
+}
+
+.stat-card:nth-child(3) .stat-icon {
+    background: #ffedd5;
+    color: #ea580c;
+}
+
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.stat-card p {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.stat-card h2 {
+    color: #1e1b4b;
+    font-size: 28px;
+}
+
+
+/* ---------- SENDER + RECEIVER ---------- */
+
+.panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+
+/* ---------- PANELS ---------- */
+
+.panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(30, 27, 75, 0.05);
+}
+
+.panel h2 {
+    color: #1a252f;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+
+/* ---------- LABELS ---------- */
+
+label {
+    display: block;
+    color: #1a252f;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 9px;
+}
+
+
+/* ---------- TYPE BUTTONS ---------- */
+
+.type-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.type-button {
+    flex: 1;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: #eef2f7;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+
+/* Active Text/File */
+
+.type-button.active {
+    background: linear-gradient(135deg, #00ced1, #0056b3);
+    border-color: #0056b3;
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.18);
+}
+
+.type-button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ---------- TEXTAREA ---------- */
+
+textarea {
+    width: 100%;
+    min-height: 130px;
+    resize: vertical;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #1a252f;
+    background: #ffffff;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+textarea:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+
+/* ---------- FILE INPUT ---------- */
+
+input[type="file"] {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px;
+    background: #ffffff;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+
+/* ---------- TRANSMIT BUTTON ---------- */
+
+.transmit-button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #007bff, #6f42c1);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transmit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(79, 70, 229, 0.25);
+}
+
+
+/* ---------- RECEIVER ---------- */
+
+#receiver {
+    min-height: 220px;
+}
+
+.waiting {
+    min-height: 200px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    background: #fafbfc;
+}
+
+.big-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.waiting h3 {
+    color: #374151;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.waiting p {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* ---------- RECEIVED DATA ---------- */
+
+.received-box {
+    min-height: 80px;
+    background: #f4f7f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 15px;
+    color: #374151;
+    font-size: 14px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+
+/* ---------- RECEIVER BUTTONS ---------- */
+
+.receiver-button {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #007bff, #6f42c1);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.receiver-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px rgba(79, 70, 229, 0.2);
+}
+
+
+/* Create Error */
+
+.error-button {
+    background: linear-gradient(135deg, #ea580c, #c2410c);
+}
+
+.error-button:hover {
+    box-shadow: 0 5px 14px rgba(234, 88, 12, 0.2);
+}
+
+
+/* ---------- SUCCESS ---------- */
+
+.success {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    color: #0d9488;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ---------- ERROR ---------- */
+
+.error {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    color: #ea580c;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* ---------- CRC PANEL ---------- */
+
+.crc-panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 32px rgba(30, 27, 75, 0.05);
+}
+
+.crc-panel h2 {
+    color: #1a252f;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.crc-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.crc-row {
+    background: #f4f7f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.crc-row span {
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.crc-row strong {
+    color: #4f46e5;
+    font-size: 18px;
+    font-family: monospace;
+}
+
+
+/* ---------- CRC STATUS ---------- */
+
+.crc-status {
+    margin-top: 15px;
+    padding: 13px;
+    border-radius: 8px;
+    background: #f4f7f6;
+    border: 1px solid #e5e7eb;
+    color: #64748b;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+/* ---------- HISTORY ---------- */
+
+.history-panel {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(30, 27, 75, 0.05);
+}
+
+.history-panel h2 {
+    color: #1a252f;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead {
+    background: #f4f7f6;
+}
+
+th {
+    color: #475569;
+    font-weight: 700;
+    text-align: left;
+    padding: 13px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+    color: #374151;
+    padding: 13px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+    background: #fafafa;
+}
+
+
+/* ---------- HISTORY STATUS ---------- */
+
+.matched {
+    color: #0d9488;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.not-matched {
+    color: #ea580c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* ---------- HIDDEN ---------- */
+
+.hidden {
+    display: none;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    padding: 18px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 800px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .panels {
+        grid-template-columns: 1fr;
+    }
+
+    .crc-content {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    main {
+        width: 94%;
+    }
+}
