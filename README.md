@@ -69,3 +69,19 @@ The objective is to demonstrate how CRC-32 detects accidental data corruption th
 **Project:** Classroom Message Integrity Tool  
 **Developed using:** HTML5, CSS3 and JavaScript  
 **Algorithm:** CRC-32
+## 📸 Project Screenshots
+
+### 1. Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### 2. Successful Text Verification
+![Successful Text Verification](screenshots/successful%20verification-text.png)
+
+### 3. Failed Text Verification
+![Failed Text Verification](screenshots/failed%20verification-text.png)
+
+### 4. Successful File Verification
+![Successful File Verification](screenshots/successful%20verification-file.png)
+
+### 5. Failed File Verification
+![Failed File Verification](screenshots/failed%20verification-file.png)
